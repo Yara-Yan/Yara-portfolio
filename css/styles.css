@@ -21,18 +21,20 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-
 a.btn-rounded-blue {
     display: inline-block;
     background-color: #3498db;
     color: white !important;
-    padding: 8px 16px;
+    padding: 12px 24px;
     border-radius: 30px;
     text-decoration: none !important;
     font-weight: bold;
     transition: background 0.3s ease;
-    margin-top: 10px;
+    margin: 10px auto;           /* 上下间距 + 居中 */
+    max-width: 100%;             /* 防止撑出容器 */
+    box-sizing: border-box;      /* 包括 padding 在内限制宽度 */
 }
+
 
 a.btn-rounded-blue:hover {
     background-color: #217dbb;
