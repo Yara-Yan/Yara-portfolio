@@ -21,18 +21,22 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.btn-rounded-blue {
+
+a.btn-rounded-blue {
     display: inline-block;
-    color: #fff;
-    background: #3498db;
+    background-color: #3498db;
+    color: white !important;
     padding: 12px 24px;
     border-radius: 30px;
-    text-decoration: none;
+    text-decoration: none !important;
     font-weight: bold;
-    transition: 0.3s ease all;
+    transition: background 0.3s ease;
+    margin-top: 10px;
 }
 
-.btn-rounded-blue:hover {
-    background: #217dbb;
-    text-decoration: none;
+a.btn-rounded-blue:hover {
+    background-color: #217dbb;
+    color: white !important;
+    text-decoration: none !important;
 }
+
