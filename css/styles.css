@@ -17,4 +17,6 @@
     height: auto;
     display: block;
     margin: 0 auto;
+    order-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
