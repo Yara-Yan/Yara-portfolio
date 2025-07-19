@@ -88,14 +88,25 @@ a.btn-rounded-blue:hover {
 }
 
 /* === Image Styles === */
-.project img,
-.certificate-img {
+.project img {
   max-width: 100%;
   height: auto;
+  max-height: 320px; /* 更大的高度显示项目图片 */
   cursor: pointer;
   border-radius: 10px;
   transition: transform 0.3s ease;
 }
+
+.certificate-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 220px; /* 稍微小一点的证书图像 */
+  object-fit: contain;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
 
 .certificate-img:hover {
   transform: scale(1.03);
