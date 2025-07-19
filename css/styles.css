@@ -42,3 +42,50 @@ a.btn-rounded-blue:hover {
     text-decoration: none !important;
 }
 
+#certificates {
+  padding: 50px 15px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.certificate-card {
+  flex: 0 0 300px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  background: #3498db;
+  color: white;
+  border: none;
+  font-size: 2em;
+  padding: 0 15px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-btn.prev { left: 0; }
+.carousel-btn.next { right: 0; }
+
