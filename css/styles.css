@@ -164,3 +164,7 @@ a.btn-rounded-blue:hover {
 }
 
 
+.project {
+  width: 100%;
+  max-width: 960px;
+}
