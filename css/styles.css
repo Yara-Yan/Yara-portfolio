@@ -125,3 +125,38 @@ a.btn-rounded-blue:hover {
   transform: scale(1.03);
 }
 
+
+.mySwiper {
+  width: 90%;
+  padding: 40px 0;
+  margin: auto;
+}
+
+.cert-slide {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+}
+
+.cert-slide img {
+  max-width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  height: auto;
+  max-height: 250px;
+  object-fit: contain;
+}
+
+.cert-slide h3 {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.cert-slide p {
+  font-size: 14px;
+  color: #777;
+}
+
