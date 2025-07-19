@@ -324,6 +324,13 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/scripts.min.js"></script>
+
+	<script>
+		const track = document.querySelector('.carousel-track');
+		document.querySelector('.prev').onclick = () => track.scrollBy({ left: -320, behavior: 'smooth' });
+		document.querySelector('.next').onclick = () => track.scrollBy({ left: 320, behavior: 'smooth' });
+	</script>
+
 </body>
 
 </html>
