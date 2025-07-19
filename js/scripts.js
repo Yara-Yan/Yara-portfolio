@@ -1,3 +1,4 @@
+
 /*!
     Title: Dev Portfolio Template
     Version: 1.2.2
@@ -98,33 +99,3 @@
     });
 
 })(jQuery);
-
-<!-- Swiper JS CDN -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-
-<script>
-  const swiper = new Swiper('.swiper-container', {
-    loop: true,
-    spaceBetween: 30,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    slidesPerView: 1,
-    breakpoints: {
-      768: {
-        slidesPerView: 2
-      },
-      1024: {
-        slidesPerView: 3
-      }
-    }
-  });
-
-  // Click to enlarge
-  function openFullscreen(img) {
-    const win = window.open("");
-    win.document.write("<img src='" + img.src + "' style='width:100%'>");
-  }
-</script>
-
