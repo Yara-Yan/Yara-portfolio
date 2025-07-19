@@ -152,3 +152,9 @@ a.btn-rounded-blue:hover {
   font-size: 16px;
   margin-bottom: 20px;
 }
+
+.project-image-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
