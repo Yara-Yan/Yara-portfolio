@@ -130,14 +130,15 @@ a.btn-rounded-blue:hover {
   padding: 20px;
 }
 
-.project-img {
+.project-image-full {
   width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto 25px auto;
-  max-width: none;  /* 移除 max-width 限制 */
-  border-radius: 12px;
+  border-radius: 10px;
+  margin: 0 auto;
+  object-fit: contain;
 }
+
 
 
 .project-content h3 {
