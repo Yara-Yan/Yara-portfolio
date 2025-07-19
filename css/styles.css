@@ -89,13 +89,16 @@ a.btn-rounded-blue:hover {
 
 /* === Image Styles === */
 .project img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  max-height: 320px; /* 更大的高度显示项目图片 */
+  max-height: none; /* remove limit */
+  aspect-ratio: 16 / 9; /* enforce aspect ratio */
+  object-fit: cover;
   cursor: pointer;
   border-radius: 10px;
   transition: transform 0.3s ease;
 }
+
 
 .certificate-img {
   max-width: 100%;
@@ -153,8 +156,11 @@ a.btn-rounded-blue:hover {
   margin-bottom: 20px;
 }
 
+
 .project-image-container {
+  width: 100%;
   max-width: 960px;
   margin: 0 auto;
 }
+
 
