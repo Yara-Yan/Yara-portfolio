@@ -107,3 +107,37 @@ a.btn-rounded-blue:hover {
     max-height: 180px;
   }
 }
+
+
+.project {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.project-image {
+  flex: 0 0 300px;
+  margin-right: 30px;
+}
+
+.project-info {
+  flex: 1;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .project {
+    display: block;
+    text-align: center;
+  }
+
+  .project-image {
+    margin: 0 auto 20px;
+    width: 90%;
+  }
+
+  .project-info {
+    margin: 0 auto;
+  }
+}
+
