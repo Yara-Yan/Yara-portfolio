@@ -99,3 +99,141 @@
     });
 
 })(jQuery);
+
+// Certificate Carousel Functionality
+let currentSlideIndex = 0;
+let slides = [];
+let dots = [];
+let autoAdvanceInterval;
+
+function showSlide(index) {
+    // Hide all slides
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    // Show current slide
+    if (slides[index]) {
+        slides[index].classList.add('active');
+    }
+    
+    // Update dots - re-select to ensure we have current references
+    const currentDots = document.querySelectorAll('.dot');
+    if (currentDots[index]) {
+        currentDots[index].classList.add('active');
+    }
+}
+
+function changeSlide(direction) {
+    currentSlideIndex += direction;
+    
+    // Loop back to first slide if at the end
+    if (currentSlideIndex >= slides.length) {
+        currentSlideIndex = 0;
+    }
+    // Loop to last slide if at the beginning
+    if (currentSlideIndex < 0) {
+        currentSlideIndex = slides.length - 1;
+    }
+    
+    showSlide(currentSlideIndex);
+}
+
+function currentSlide(index) {
+    currentSlideIndex = index - 1;
+    showSlide(currentSlideIndex);
+    
+    // Ensure dots are updated after a brief delay
+    setTimeout(() => {
+        const currentDots = document.querySelectorAll('.dot');
+        currentDots.forEach((dot, i) => {
+            if (i === currentSlideIndex) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }, 10);
+}
+
+// Initialize carousel - try multiple approaches
+function initCarousel() {
+    // Get carousel elements
+    slides = document.querySelectorAll('.carousel-slide');
+    dots = document.querySelectorAll('.dot');
+    
+    if (slides.length === 0) {
+        setTimeout(initCarousel, 100);
+        return;
+    }
+    
+    // Add event listeners to buttons
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    
+    if (prevBtn) {
+        // Remove any existing listeners
+        prevBtn.replaceWith(prevBtn.cloneNode(true));
+        const newPrevBtn = document.querySelector('.carousel-btn.prev');
+        if (newPrevBtn) {
+            newPrevBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                changeSlide(-1);
+            });
+        }
+    }
+    
+    if (nextBtn) {
+        // Remove any existing listeners
+        nextBtn.replaceWith(nextBtn.cloneNode(true));
+        const newNextBtn = document.querySelector('.carousel-btn.next');
+        if (newNextBtn) {
+            newNextBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                changeSlide(1);
+            });
+        }
+    }
+    
+    // Add event listeners to dots
+    dots.forEach((dot, index) => {
+        // Remove any existing listeners
+        dot.replaceWith(dot.cloneNode(true));
+        const newDot = document.querySelectorAll('.dot')[index];
+        newDot.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            currentSlide(index + 1);
+        });
+    });
+    
+    // Re-select dots after cloning to ensure we have the correct references
+    dots = document.querySelectorAll('.dot');
+    
+    // Initialize first slide
+    if (slides.length > 0) {
+        showSlide(0);
+    }
+    
+    // Auto-advance carousel every 5 seconds
+    if (slides.length > 1) {
+        if (autoAdvanceInterval) {
+            clearInterval(autoAdvanceInterval);
+        }
+        autoAdvanceInterval = setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+    }
+}
+
+// Try multiple initialization approaches
+document.addEventListener('DOMContentLoaded', initCarousel);
+window.addEventListener('load', initCarousel);
+
+// Also try immediate initialization
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCarousel);
+} else {
+    initCarousel();
+}
