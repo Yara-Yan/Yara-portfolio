@@ -126,18 +126,19 @@ a.btn-rounded-blue:hover {
   border-radius: 15px;
   overflow: hidden;
   margin: 40px auto;
-  max-width: 900px;
   text-align: center;
   padding: 20px;
 }
 
 .project-img {
   width: 100%;
-  max-height: 350px;
-  object-fit: contain;
+  height: auto;
+  display: block;
+  margin: 0 auto 25px auto;
+  max-width: none;  /* 移除 max-width 限制 */
   border-radius: 12px;
-  margin-bottom: 25px;
 }
+
 
 .project-content h3 {
   font-size: 24px;
